@@ -1,3 +1,7 @@
+## The Gibbs phenomenon states: if you add sine waves at specific
+## frequency/phase/amplitude combinations you can approximate a square
+## wave.
+##
 ## See chapter 2.1 in "SDR for Engineers"
 
 samples = 100; # how many samples per waves
@@ -10,7 +14,7 @@ x = linspace(0, 4*pi, samples);
 hold on;       # combine all following plot3() calls into one graphic
 
 ## Draw the individual waves
-for i = 1:2:(waves*2)
+for i = 1:2:(waves*2-1)
   wave = sin(x*i) / i;
   plot3(repmat(i,1,samples), x, wave );
 
